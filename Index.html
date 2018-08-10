@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+label {
+	display: inline-block;
+	width: 70px;
+	height:;
+}
+</style>
+</head>
+<body>
+<label>Nombre:</label>
+	<input id="nombre" type="text">
+	<br>
+	<br>
+	<label>Apellido:</label>
+	<input id="apellido" type="text">
+	<br>
+	<br>
+	<label>Dni:</label>
+	<input id="dni" type="text">
+	<br>
+	<br>
+	<label>Edad:</label>
+	<input id="edad" type="text">
+	<button>Ok</button>
+	<p id="resultado"></p>
+	<p id="documentos"></p>
+	<script>
+		let btn_click = document.querySelector('button');
+		let nros_dni=[];
+		btn_click.onclick = function()
+		{let edad = document.querySelector('#edad').value;
+		let nro_dni = document.querySelector('#dni').value;
+		if (edad >= 18) {
+			document.querySelector('#resultado').innerHTML = 'Inscripción ACEPTADA';
+			nros_dni.push(nro_dni);
+		}
+		else{
+			document.querySelector('#resultado').innerHTML = 'Inscripción RECHAZADA';
+		}
+		document.querySelector('#documentos').innerHTML=nros_dni.toString();}
+	</script>
+</body>
+</html>
